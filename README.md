@@ -9,6 +9,11 @@ A polished, responsive personal work-management dashboard built with React, Vite
 - Local-time deadline status calculation and a notification center
 - Browser Notification API setup, with one-time reminder / overdue tracking while the app is open
 - Calendar, history timeline, dark mode, responsive sidebar, and mobile-friendly modals
+- My Day: automatically ranks overdue, due-today, urgent/high-priority, in-progress, and manually chosen work
+- Subtasks with persisted progress, completion state, edit/delete controls, and task activity records
+- Per-task working notes with add, edit, delete, timestamps, and history integration
+- Analytics page with date filters, completed-per-day chart, status/category breakdowns, insights, and streak history
+- Backup and restore: export full JSON backups, export tasks as CSV, and validate then merge or replace an imported backup
 
 ## Run locally
 
@@ -33,3 +38,10 @@ Browsers do not reliably deliver ordinary JavaScript notifications once the brow
 ## Data and future backend
 
 This implementation intentionally uses `localStorage` for zero-config persistence and a working local demo. The task objects include the fields expected by a REST/MongoDB API, and the state layer can be swapped for `GET/POST/PUT/DELETE /api/tasks`, history, and notification endpoints when server-backed multi-device data is needed.
+
+## Using the advanced features
+
+- Open any task to manage **Subtasks**, **Notes**, and the task-specific **Activity** timeline.
+- Use **My Day** to add a future task manually; due-today, overdue, and high-priority work is included automatically.
+- Open **Analytics** to switch between reporting ranges and view the current and longest productive streaks. A productive day is one on which at least one task is completed.
+- In **Settings → Backup & data**, use JSON for a full portable backup, CSV for spreadsheets, and Import Backup to choose either a safe merge or an explicit full replacement.
